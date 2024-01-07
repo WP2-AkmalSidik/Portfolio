@@ -74,6 +74,31 @@ ScrollReveal({
     duration: 2000,
     delay: 200
 });
+// Membuat observer
+const section = document.querySelector('#skills');
+const options = {
+    root: null,
+    threshold: 0.2 // Jika 20% dari elemen target terlihat, observer akan dipicu
+};
+
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // Ketika elemen terlihat, tambahkan kelas untuk memulai animasi
+            const iconBoxes = document.querySelectorAll('.icon-box');
+            iconBoxes.forEach(box => {
+                box.classList.add('animate');
+            });
+
+            // Hentikan observer setelah animasi dimulai agar tidak dipicu lagi
+            observer.unobserve(entry.target);
+        }
+    });
+}, options);
+
+// Mulai mengamati bagian "My Skills"
+observer.observe(section);
+
 
 ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
 ScrollReveal().reveal('.home-img img, .services-container, .portfolio-box, .testimonial-wrapper, .contact form', { origin: 'bottom' });

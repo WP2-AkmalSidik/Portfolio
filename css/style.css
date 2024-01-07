@@ -954,49 +954,81 @@ img {
     justify-content: space-around;
 }
 
-/* CSS */
-.skill-category {
-    flex: 1;
-    margin: 0 10px;
-    opacity: 0;
-    transform: translateY(-50px);
-    animation: slideIn 2s forwards cubic-bezier(0.50, 0.2, 0.50, 2);
-    /*Mengubahdurasidanfungsianimasi*/:;
-    -webkit-animation: slideIn 2s forwards cubic-bezier(0.50, 0.2, 0.50, 2);
-}
-
-@keyframes slideIn {
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-.skill-category h3 {
-    font-size: 24px;
-    margin-bottom: 20px;
+/* Mengaplikasikan variabel pada animasi fadeIn */
+.icon-box {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color); /* Menggunakan variabel untuk latar belakang */
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .skill-icons {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
 }
 
-.skill-icons img {
-    width: 80px;
-    height: 80px;
+.icon-box.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.icon-box {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    background: var(--bg-color);
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f025;
+    border-radius: 10px;
+    overflow: hidden;
+    /* Stil lain di sini */
+    opacity: 0; /* Awalnya diatur menjadi tidak terlihat */
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.icon-box img {
+    max-width: 80px;
+    max-height: 80px;
     transition: transform 0.3s ease-in-out;
 }
 
-.skill-icons img:hover {
-    transform: scale(1.2);
+.icon-box:hover {
+    transform: scale(1.1);
 }
 
-/* Styling for span */
-span {
-    font-weight: bold;
-    color: var(--main-color); /* Change to your desired main color */
+.icon-box:hover img {
+    transform: scale(1.2);
 }
