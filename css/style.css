@@ -939,3 +939,64 @@ span {
 img {
     border-radius: 20px;
 }
+
+.skills {
+    text-align: center;
+    padding: 60px 0;
+}
+
+.heading {
+    margin-bottom: 40px;
+}
+
+.skills-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* CSS */
+.skill-category {
+    flex: 1;
+    margin: 0 10px;
+    opacity: 0;
+    transform: translateY(-50px);
+    animation: slideIn 2s forwards cubic-bezier(0.50, 0.2, 0.50, 2);
+    /*Mengubahdurasidanfungsianimasi*/:;
+    -webkit-animation: slideIn 2s forwards cubic-bezier(0.50, 0.2, 0.50, 2);
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.skill-category h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.skill-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.skill-icons img {
+    width: 80px;
+    height: 80px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.skill-icons img:hover {
+    transform: scale(1.2);
+}
+
+/* Styling for span */
+span {
+    font-weight: bold;
+    color: var(--main-color); /* Change to your desired main color */
+}

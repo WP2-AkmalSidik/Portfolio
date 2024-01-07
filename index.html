@@ -11,7 +11,7 @@
     <!-- box icons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <!-- MailJs -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script> -->
     <!-- custom css -->
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -129,26 +129,54 @@
             <div class="services-box">
                 <i class='bx bx-code-alt'></i>
                 <h3>Web Development</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi itaque similique, architecto
-                    eaque ut quas delectus pariatur nesciunt in eligendi mollitia dicta.</p>
+                <p>Crafting captivating websites that dominate the digital realm! Elevate your brand,
+                    captivate your audience, and soar above the competition. Let's transform your vision
+                    into an online masterpiece!</p>
                 <!-- <a href="#" class="btn">Read More</a> -->
             </div>
             <div class="services-box">
-                <i class='bx bxs-paint'></i>
-                <h3>Graphic Design</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi itaque similique, architecto
-                    eaque ut quas delectus pariatur nesciunt in eligendi mollitia dicta.</p>
-                <!-- <a href="#" class="btn">Read More</a> -->
-            </div>
-            <div class="services-box">
-                <i class='bx bx-bar-chart-alt'></i>
-                <h3>Digital Marketing</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi itaque similique, architecto
-                    eaque ut quas delectus pariatur nesciunt in eligendi mollitia dicta.</p>
-                <!-- <a href="#" class="btn">Read More</a> -->
+                <i class='bx bx-devices'></i>
+                <h3>Mobile Developer</h3>
+                <p>From groundbreaking app concepts to seamless user experiences, we engineer mobile
+                    solutions that redefine the future. Elevate your brand's accessibility, engage users,
+                    and make an impact on the go! Let's shape your mobile vision into a reality!</p>
             </div>
         </div>
     </section>
+
+    <section class="skills" id="skills">
+        <h2 class="heading">My <span>Skills</span></h2>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>Backend</h3>
+                <div class="skill-icons">
+                    <img src="images/python.svg" alt="Python">
+                    <img src="images/django.svg" alt="Django">
+                    <img src="images/js.svg" alt="JavaScript">
+                    <img src="images/php.svg" alt="PHP">
+                    <img src="images/ci.svg" alt="CodeIgniter">
+                    <img src="images/xampp.svg" alt="XAMPP">
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Frontend</h3>
+                <div class="skill-icons">
+                    <img src="images/html.svg" alt="HTML">
+                    <img src="images/css.svg" alt="CSS">
+                    <img src="images/bootstrap.svg" alt="Bootstrap">
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Version Control System</h3>
+                <div class="skill-icons">
+                    <img src="images/git.svg" alt="Git">
+                    <img src="images/github.svg" alt="GitHub">
+                    <img src="images/nodejs.svg" alt="Node.js">
+                </div>
+            </div>
+        </div>
+    </section>
+    
 
     <!-- portfolio section design -->
     <section class="portfolio" id="portfolio">
@@ -183,7 +211,16 @@
                     <a href="http://localhost/toko/welcome"><i class='bx bx-link-external'></i></a>
                 </div>
             </div>
-
+            
+            <div class="portfolio-box">
+                <img src="images/wifian.png" alt="">
+                <div class="portfolio-layer">
+                    <h4>Cek User Wifi</h4>
+                    <p>
+                        Created a wifi user search website using PHP Native & CSS for its interface design, and this is the first website I created in practice.</p>
+                    <a href="http://wifian.000.pe/index.php"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -250,27 +287,23 @@
             <button onclick="sendMesagge(); return false;" class="btn">Send Message</button>
         </form>
     </section> -->
-
-    
     <!-- contact section design -->
     <section class="contact" id="contact">
         <h2 class="heading">Contact <span>Me!</span></h2>
-
             <form id="form">
         <div class="input-box">
             <input type="text" name="sendername" id="sendername" placeholder="Full Name">
             <input type="text" name="senderemail" id="senderemail" placeholder="Email Address">
         </div>
         <div class="input-box">
-            <input type="text" name="senderno_tlp" id="senderno_tlp" placeholder="Phone Number ">>
+            <input type="text" name="senderno_tlp" id="senderno_tlp" placeholder="Phone Number">>
             <input type="text" name="subject" id="subject" placeholder="Subject">
         </div>
         <div class="input-box">
-            <textarea type="text" name="message" id="message" cols="30" rows="10" > </textarea>
+            <textarea type="text" name="message" id="message" cols="30" rows="10" placeholder="Your masagge"></textarea>
         </div>
             <input class="btn" type="submit" id="button" value="Send Email">
     </form>
-
             <script type="text/javascript"
             src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     </section>
@@ -278,7 +311,7 @@
     <!-- footer design -->
     <footer class="footer">
         <div class="footer-text">
-            <p>Copyright &copy; <span style="color: white;" id="currentYear"></span> | All Rights Reserved.</p>
+            <p>Copyright &copy;Akmal Sidik <span style="color: white;" id="currentYear"></span> | All Rights Reserved.</p>
         </div>
         <div class="footer-iconTop">
             <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
@@ -288,21 +321,16 @@
 
 <script type="text/javascript">
   emailjs.init('4mx5pRn7HPbdaM8rS');
-
   const btn = document.getElementById('button');
-
   document.getElementById('form').addEventListener('submit', function (event) {
     event.preventDefault();
-
     btn.value = 'Sending...';
-
     const serviceID = 'default_service';
     const templateID = 'template_brnkc4r';
-
     emailjs.sendForm(serviceID, templateID, this)
         .then(() => {
         btn.value = 'Send Email';
-        alert('Sent!');
+        alert('Your message is sent!');
         }, (err) => {
         btn.value = 'Send Email';
         alert(JSON.stringify(err));
